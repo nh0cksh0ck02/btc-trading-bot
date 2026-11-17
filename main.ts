@@ -4,8 +4,10 @@
  */
 import { BPS, runBars, type BarsState, type BuyInput, type OrderInput } from './vendor/makefun-bars.ts';
 
+// Horizon in 1-minute bars used for momentum price evaluation
 const LOOKBACK_BARS = 22;
 const MOMENTUM_TOP_N = 1;
+// Maximum allowed execution slippage in basis points (25%)
 const MAX_SLIPPAGE_BPS = 2_500;
 
 const history = new Map<string, (bigint | null)[]>();
